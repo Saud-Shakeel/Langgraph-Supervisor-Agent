@@ -34,7 +34,7 @@ def chat_router(request: ChatRequest):
         response = handle_normal_chat(normal_intent)
         return ChatResponse(reply=response["messages"][-1].content)
 
-@router.get("/cli")
+@router.get("/")
 def cli_router():
     run_chatbot()
     return {"message": "✅ CLI chatbot has been activated in terminal."}
